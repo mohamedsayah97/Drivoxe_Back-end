@@ -1,4 +1,5 @@
 import { getModelForClass, prop } from "@typegoose/typegoose";
+import { TimeStamps } from "@typegoose/typegoose/lib/defaultClasses";
 
 export class Booking {
   @prop({ type: String, required: true, ref: 'User' })
@@ -60,7 +61,11 @@ export class Booking {
 
   @prop({ type: Boolean, default: false })
   deposit_returned: boolean;
-}
+  
+
+ }//, {
+//   TimeStamps : true
+// }
 
 const BookingModel = getModelForClass(Booking);
 export default BookingModel;
